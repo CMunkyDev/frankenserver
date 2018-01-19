@@ -19,7 +19,8 @@ function generatePackageTemplate (backendObject) {
                     "knex": "^0.14.2",
                     "morgan": "^1.9.0",
                     "pg": "^7.4.1",
-                    "bcrypt-as-promised": "^1.1.0"
+                    "bcrypt-as-promised": "^1.1.0",
+                    "uuid": "^3.2.1"
                 }
             }
         `

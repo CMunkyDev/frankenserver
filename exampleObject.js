@@ -6,6 +6,8 @@ let backendObject = {
     resources: [
         {
             name: `veterinarians`,
+            requiredFields: [],
+            optionalFields: [],
             routes: [
                 {
                     name: 'getOneVet',
@@ -22,33 +24,25 @@ let backendObject = {
                 {
                     name: 'createVet',
                     method: 'POST',
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'replaceVet',
                     method: 'PUT',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'alterVet',
                     method: 'PATCH',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'removeVet',
                     method: 'DELETE',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 }
             ]
         },
@@ -70,33 +64,25 @@ let backendObject = {
                 {
                     name: 'createClient',
                     method: 'POST',
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'replaceClient',
                     method: 'PUT',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'alterClient',
                     method: 'PATCH',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'removeClient',
                     method: 'DELETE',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 }
             ]
         },
@@ -118,33 +104,25 @@ let backendObject = {
                 {
                     name: 'createAnimal',
                     method: 'POST',
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'replaceAnimal',
                     method: 'PUT',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'alterAnimal',
                     method: 'PATCH',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'removeAnimal',
                     method: 'DELETE',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 }
             ] //if routes is undefined, make basic 6 routes.
         },
@@ -166,33 +144,25 @@ let backendObject = {
                 {
                     name: 'createAppointment',
                     method: 'POST',
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'replaceAppointment',
                     method: 'PUT',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'alterAppointment',
                     method: 'PATCH',
                     all: false,
-                    permissions: ['employee'],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee']
                 },
                 {
                     name: 'removeAppointment',
                     method: 'DELETE',
                     all: false,
-                    permissions: ['employee', `the_client`],
-                    requiredFields: [],
-                    optionalFields: []
+                    permissions: ['employee', `the_client`]
                 }
             ]
         }
