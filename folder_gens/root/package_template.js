@@ -8,7 +8,7 @@ function generatePackageTemplate (backendObject) {
                 "scripts": {
                     "start": "node server.js"
                 },
-                "author": "${process.env.PROJECT_NAME}",
+                "author": "frankenserver",
                 "license": "ISC",
                 "dependencies": {
                     "body-parser": "^1.18.2",
