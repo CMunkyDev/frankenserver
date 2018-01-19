@@ -10,36 +10,36 @@ let backendObject = {
             optionalFields: [],
             routes: [
                 {
-                    name: 'getOneVet',
+                    name: 'show',
                     method: 'GET',
                     all: false,
                     permissions: [`guest`, `client`, `employee`, `admin`],
                 },
                 {
-                    name: 'getAllVets',
+                    name: 'index',
                     method: 'GET',
                     all: true,
                     permissions: [`guest`, `client`, `employee`, `admin`]
                 },
                 {
-                    name: 'createVet',
+                    name: 'create',
                     method: 'POST',
                     permissions: ['employee']
                 },
                 {
-                    name: 'replaceVet',
+                    name: 'update',
                     method: 'PUT',
                     all: false,
                     permissions: ['employee']
                 },
                 {
-                    name: 'alterVet',
+                    name: 'update',
                     method: 'PATCH',
                     all: false,
                     permissions: ['employee']
                 },
                 {
-                    name: 'removeVet',
+                    name: 'delete',
                     method: 'DELETE',
                     all: false,
                     permissions: ['employee']
@@ -50,36 +50,36 @@ let backendObject = {
             name: `clients`,
             routes: [
                 {
-                    name: 'getOneClient',
+                    name: 'show',
                     method: 'GET',
                     all: false,
                     permissions: [`employee`, `admin`],
                 },
                 {
-                    name: 'getAllClients',
+                    name: 'index',
                     method: 'GET',
                     all: true,
                     permissions: [`employee`, `admin`]
                 },
                 {
-                    name: 'createClient',
+                    name: 'create',
                     method: 'POST',
                     permissions: ['employee']
                 },
                 {
-                    name: 'replaceClient',
+                    name: 'update',
                     method: 'PUT',
                     all: false,
                     permissions: ['employee']
                 },
                 {
-                    name: 'alterClient',
+                    name: 'update',
                     method: 'PATCH',
                     all: false,
                     permissions: ['employee']
                 },
                 {
-                    name: 'removeClient',
+                    name: 'delete',
                     method: 'DELETE',
                     all: false,
                     permissions: ['employee']
@@ -90,36 +90,36 @@ let backendObject = {
             name: `animals`,
             routes: [
                 {
-                    name: 'getOneAnimal',
+                    name: 'show',
                     method: 'GET',
                     all: false,
                     permissions: [`the_client`, `employee`, `admin`],
                 },
                 {
-                    name: 'getAllAnimals',
+                    name: 'index',
                     method: 'GET',
                     all: true,
                     permissions: [`employee`, `admin`]
                 },
                 {
-                    name: 'createAnimal',
+                    name: 'create',
                     method: 'POST',
                     permissions: ['employee']
                 },
                 {
-                    name: 'replaceAnimal',
+                    name: 'update',
                     method: 'PUT',
                     all: false,
                     permissions: ['employee']
                 },
                 {
-                    name: 'alterAnimal',
+                    name: 'update',
                     method: 'PATCH',
                     all: false,
                     permissions: ['employee']
                 },
                 {
-                    name: 'removeAnimal',
+                    name: 'delete',
                     method: 'DELETE',
                     all: false,
                     permissions: ['employee']
@@ -130,36 +130,36 @@ let backendObject = {
             name: `appointments`,
             routes: [
                 {
-                    name: 'getOneAppointment',
+                    name: 'show',
                     method: 'GET',
                     all: false,
                     permissions: [`the_client`, `employee`, `admin`],
                 },
                 {
-                    name: 'getAllAppointments',
+                    name: 'index',
                     method: 'GET',
                     all: true,
                     permissions: [`employee`, `admin`]
                 },
                 {
-                    name: 'createAppointment',
+                    name: 'create',
                     method: 'POST',
                     permissions: ['employee']
                 },
                 {
-                    name: 'replaceAppointment',
+                    name: 'update',
                     method: 'PUT',
                     all: false,
                     permissions: ['employee']
                 },
                 {
-                    name: 'alterAppointment',
+                    name: 'update',
                     method: 'PATCH',
                     all: false,
                     permissions: ['employee']
                 },
                 {
-                    name: 'removeAppointment',
+                    name: 'delete',
                     method: 'DELETE',
                     all: false,
                     permissions: ['employee', `the_client`]

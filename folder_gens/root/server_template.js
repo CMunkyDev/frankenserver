@@ -14,17 +14,13 @@ function generateServerTemplate (resourcesArr) {
         const morgan = require('morgan')
         const path = require('path')
 
-        /*
         ${routerDestructure}
-        */
 
         app.use(cors())
         app.use(bodyParser.json())
         app.use(morgan('dev'))
         
-        /*
         ${resourceRoutes}
-        */
 
         app.use((req, res) => {
             const status = 404
