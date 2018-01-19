@@ -6,53 +6,195 @@ let backendObject = {
     resources: [
         {
             name: `veterinarians`,
-            routes: {
-                getOne: [`guest`, `employee`, `admin`], //OR null (unprotected)
-                getAll: [`guest`, `employee`, `admin`], //OR null (unprotected)
-                post: [`employee`], //OR null (unprotected)
-                put: [`employee`], //OR null (unprotected)
-                patch: [`employee`], //OR null (unprotected)
-                delete: [`employee`], //OR null (unprotected)
-            }
+            routes: [
+                {
+                    name: 'getOneVet',
+                    method: 'GET',
+                    all: false,
+                    permissions: [`guest`, `client`, `employee`, `admin`],
+                },
+                {
+                    name: 'getAllVets',
+                    method: 'GET',
+                    all: true,
+                    permissions: [`guest`, `client`, `employee`, `admin`]
+                },
+                {
+                    name: 'createVet',
+                    method: 'POST',
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'replaceVet',
+                    method: 'PUT',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'alterVet',
+                    method: 'PATCH',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'removeVet',
+                    method: 'DELETE',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                }
+            ]
         },
         {
             name: `clients`,
-            routes: {
-                getOne: [`employee`, `admin`], //OR null (unprotected)
-                getAll: [`employee`, `admin`], //OR null (unprotected)
-                post: [`employee`], //OR null (unprotected)
-                put: [`employee`], //OR null (unprotected)
-                patch: [`employee`], //OR null (unprotected)
-                delete: [`employee`], //OR null (unprotected)
-            } //if routes is undefined, make basic 6 routes.
+            routes: [
+                {
+                    name: 'getOneClient',
+                    method: 'GET',
+                    all: false,
+                    permissions: [`employee`, `admin`],
+                },
+                {
+                    name: 'getAllClients',
+                    method: 'GET',
+                    all: true,
+                    permissions: [`employee`, `admin`]
+                },
+                {
+                    name: 'createClient',
+                    method: 'POST',
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'replaceClient',
+                    method: 'PUT',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'alterClient',
+                    method: 'PATCH',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'removeClient',
+                    method: 'DELETE',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                }
+            ]
         },
         {
             name: `animals`,
-            routes: {
-                getOne: [`the_client`, `employee`, `admin`], //OR null (unprotected)
-                getAll: [`employee`, `admin`], //OR null (unprotected)
-                post: [`employee`], //OR null (unprotected)
-                put: [`employee`], //OR null (unprotected)
-                patch: [`employee`], //OR null (unprotected)
-                delete: [`employee`], //OR null (unprotected)
-            } //if routes is undefined, make basic 6 routes.
+            routes: [
+                {
+                    name: 'getOneAnimal',
+                    method: 'GET',
+                    all: false,
+                    permissions: [`the_client`, `employee`, `admin`],
+                },
+                {
+                    name: 'getAllAnimals',
+                    method: 'GET',
+                    all: true,
+                    permissions: [`employee`, `admin`]
+                },
+                {
+                    name: 'createAnimal',
+                    method: 'POST',
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'replaceAnimal',
+                    method: 'PUT',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'alterAnimal',
+                    method: 'PATCH',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'removeAnimal',
+                    method: 'DELETE',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                }
+            ] //if routes is undefined, make basic 6 routes.
         },
         {
             name: `appointments`,
-            routes: {
-                getOne: [`the_client`, `employee`, `admin`], //OR null (unprotected)
-                getAll: [`employee`, `admin`], //OR null (unprotected)
-                post: [`employee`], //OR null (unprotected)
-                put: [`employee`], //OR null (unprotected)
-                patch: [`employee`], //OR null (unprotected)
-                delete: [`the_client`, `employee`], //OR null (unprotected)
-            } //if routes is undefined, make basic 6 routes.
-        },
-        {
-            name: `adoptions`,
-            routes: {
-                adopt: [`client`] //OR null (unprotected)
-            } //if routes is undefined, make basic 6 routes.
+            routes: [
+                {
+                    name: 'getOneAppointment',
+                    method: 'GET',
+                    all: false,
+                    permissions: [`the_client`, `employee`, `admin`],
+                },
+                {
+                    name: 'getAllAppointments',
+                    method: 'GET',
+                    all: true,
+                    permissions: [`employee`, `admin`]
+                },
+                {
+                    name: 'createAppointment',
+                    method: 'POST',
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'replaceAppointment',
+                    method: 'PUT',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'alterAppointment',
+                    method: 'PATCH',
+                    all: false,
+                    permissions: ['employee'],
+                    requiredFields: [],
+                    optionalFields: []
+                },
+                {
+                    name: 'removeAppointment',
+                    method: 'DELETE',
+                    all: false,
+                    permissions: ['employee', `the_client`],
+                    requiredFields: [],
+                    optionalFields: []
+                }
+            ]
         }
     ],
     database: {
