@@ -1,3 +1,5 @@
+var now = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`
+
 let backendObject = {
     name: `vet_api`,
     userTypes: [`guest`, `client`, `employee`, `admin`],//Error if null/undefined
