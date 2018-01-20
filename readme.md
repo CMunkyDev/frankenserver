@@ -6,16 +6,16 @@
     - Support Databases; FrankenServer creates JSON files that it reads and writes from to store data.
     - Allow for custom routes. Current Routes: Get One, Get All, Create, Put, Patch, Delete
     - Support Authentication/Authorization
-    ** I intend to add these functionalities in the future **
+    **I intend to add these functionalities in the future**
 
 # To Install:
-```
+```JavaScript
 npm install frankenserver
 npm install jszip
 ```
 
 # To Generate API Server ZIP in Current Folder:
-```
+```JavaScript
 const frankenserver = require('frankenserver')
 let apiObject = /* SEE API Object SECTION IN README */
 let serverZip = frankenserver(apiObject)
@@ -31,7 +31,7 @@ serverZip
 
 # API Object:
  - api object MUST be in this same format:
-```
+```JavaScript
 {
     name: `my_api`, //string that will be the name of your API folder
     resources: [ //resources is an array of resource objects. There can be as many resource objects as you'd like
