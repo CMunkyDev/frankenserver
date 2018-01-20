@@ -6,6 +6,7 @@
     - Support Databases; FrankenServer creates JSON files that it reads and writes from to store data.
     - Allow for custom routes. Current Routes: Get One, Get All, Create, Put, Patch, Delete
     - Support Authentication/Authorization
+    
     **I intend to add these functionalities in the future**
 
 # To Install:
