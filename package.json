@@ -1,6 +1,6 @@
 {
   "name": "frankenserver",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,8 @@
     "url": "https://github.com/CMunkyDev/frankenserver"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "knex"
   },
   "author": "Matt Mueller <CMunkyDev@gmail.com>",
   "license": "ISC",
