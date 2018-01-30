@@ -1,5 +1,6 @@
 function generateRoute(routeObject, resourceName) {
     let method = routeObject.method.toLowerCase()
+    console.log('NAME',routeObject.name)
     return `router.${method}('/${method !== 'post' && !routeObject.all && routeObject.name.toLowerCase() !== 'index' ? ':id' : ''}', /*${routeObject.permissions ? `authController.verifyToken, ` : ''}${routeObject.permissions ? `authController.allowOnly(${routeObject.permissions.map(perm => `\'${perm}\'`).join(',')}), ` : ''}*/ ${resourceName}Controller.${routeObject.name})`
 }
 
