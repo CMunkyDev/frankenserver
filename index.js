@@ -14,7 +14,7 @@ function multipleFiles(zip, folderName, extension, resourceArr, inputOrCallback)
     resourceArr.forEach(resource => zip.file(`${folderName}/${resource.name}.${extension}`, typeof inputOrCallback === 'string' ? inputOrCallback : inputOrCallback(resource)))
 }
 
-function createBE(bEObject) {
+function createBE(bEObject, optionsObject) {
     let zip = new JSZip
     let root = bEObject.name
     zip.folder(root).file(`package.json`, packageTemplate(bEObject)).file(`server.js`, serverTemplate(bEObject.resources))
@@ -27,19 +27,19 @@ function createBE(bEObject) {
     zip.file(`${root}/models/model.js`, modelClassFile)
     multipleFiles(zip, `${root}/models`, 'js', bEObject.resources, modelFileTemplate)
     multipleFiles(zip, `${root}/database`, 'json', bEObject.resources, '[]')
-    return zip
+    if (!optionsObject || !optionsObject.toFile) {
+        return zip
+    } else {
+        return zip
+            .generateNodeStream({ type: 'nodebuffer', streamFiles: true })
+            .pipe(fs.createWriteStream(`./${bEObject.name}Server.zip`))
+            .on('finish', function () {
+                // JSZip generates a readable stream with a "end" event,
+                // but is piped here in a writable stream which emits a "finish" event.
+                console.log(`${bEObject.name}Server.zip has been created!`)
+            })
+    }
 }
 
 
 module.exports = createBE
-
-// let apiObject = require('./backend-generator-object')
-// let serverZip = createBE(apiObject)
-// serverZip
-//     .generateNodeStream({ type: 'nodebuffer', streamFiles: true })
-//     .pipe(fs.createWriteStream(`./${apiObject.name}Server.zip`))
-//     .on('finish', function () {
-//         // JSZip generates a readable stream with a "end" event,
-//         // but is piped here in a writable stream which emits a "finish" event.
-//         console.log(`${apiObject.name}Server.zip has been created!`);
-//     });

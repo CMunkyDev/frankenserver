@@ -19,15 +19,7 @@ npm install jszip
 ```JavaScript
 const frankenserver = require('frankenserver')
 let apiObject = /* SEE API Object SECTION IN README */
-let serverZip = frankenserver(apiObject)
-serverZip
-    .generateNodeStream({ type: 'nodebuffer', streamFiles: true })
-    .pipe(fs.createWriteStream(`./${apiObject.name}Server.zip`))
-    .on('finish', function () {
-        // JSZip generates a readable stream with a "end" event,
-        // but is piped here in a writable stream which emits a "finish" event.
-        console.log(`${apiObject.name}Server.zip has been created!`);
-    });
+frankenserver(apiObject, {toFile: true})
 ```
 
 # API Object:
