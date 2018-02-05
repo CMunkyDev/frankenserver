@@ -12,7 +12,6 @@
 # To Install:
 ```JavaScript
 npm install frankenserver
-npm install jszip
 ```
 
 # To Generate API Server ZIP in Current Folder:
