@@ -4,7 +4,7 @@ function generateServerTemplate (resourcesArr) {
     let routerDestructure = `const {\n        `
     resourcesArr.forEach(resource =>  routerDestructure += `    ${resource.name}Router: ${resource.name},\n        `)
     routerDestructure += `} = require('./routes')`
-    return `require('dotenv').load()
+    return `require('dotenv').config()
 const express = require('express')
 const app = express()
 const cors = require('cors')

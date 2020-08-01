@@ -1,4 +1,4 @@
-module.exports = `const uuid = require('uuid/v4')
+module.exports = `const { v4: uuid } = require('uuid')
 const fs = require('fs')
 const { promisify } = require('util')
 const readFileAsync = promisify(fs.readFile)
